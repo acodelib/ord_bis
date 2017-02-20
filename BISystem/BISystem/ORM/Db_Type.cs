@@ -12,7 +12,11 @@ namespace BISystem.ORM
 
         [Key]
         public int    db_type_id { get; set; }
+
+        [Display(Name="Db Type")]
         public String name { get; set; }
+
+        [Display(Name="Engine Version")]
         public String version { get; set; }
 
         public virtual IEnumerable<Connection> Connections { get; set; }

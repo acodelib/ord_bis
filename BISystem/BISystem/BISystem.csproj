@@ -177,12 +177,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppLogic\DbParser.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ConnectionController.cs" />
+    <Compile Include="Controllers\DbTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -190,6 +193,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="ORM\Connection.cs" />
     <Compile Include="ORM\Db_Type.cs" />
+    <Compile Include="ORM\User.cs" />
     <Compile Include="ORM\_DbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -304,6 +308,17 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\DbType\Index.cshtml" />
+    <Content Include="Views\DbType\Details.cshtml" />
+    <Content Include="Views\DbType\Create.cshtml" />
+    <Content Include="Views\DbType\Edit.cshtml" />
+    <Content Include="Views\DbType\Delete.cshtml" />
+    <Content Include="Views\DbType\_CreateDbType.cshtml" />
+    <Content Include="Views\Connection\Index.cshtml" />
+    <Content Include="Views\Connection\Details.cshtml" />
+    <Content Include="Views\Connection\Create.cshtml" />
+    <Content Include="Views\Connection\Edit.cshtml" />
+    <Content Include="Views\Connection\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,13 +8,12 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using BISystem.Filters;
 using BISystem.Models;
+using BISystem.ORM;
 
 namespace BISystem.Controllers
 {
-    [Authorize]
-    [InitializeSimpleMembership]
+    [Authorize]    
     public class AccountController : Controller
     {
         //
@@ -263,14 +262,14 @@ namespace BISystem.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (ORM._DbModel db = new ORM._DbModel())
                 {
-                    UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
+                    User user = db.User.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists
                     if (user == null)
                     {
                         // Insert name into the profile table
-                        db.UserProfiles.Add(new UserProfile { UserName = model.UserName });
+                        db.User.Add(new User { UserName = model.UserName });
                         db.SaveChanges();
 
                         OAuthWebSecurity.CreateOrUpdateAccount(provider, providerUserId, model.UserName);

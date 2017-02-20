@@ -1,0 +1,78 @@
+﻿@model BISystem.ORM.Connection
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Connection</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Db_Type.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Db_Type.name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.database_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.database_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.default_schema)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.default_schema)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.host)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.host)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.db_user)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.db_user)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.time_out)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.time_out)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.connection_string)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.connection_string)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.connection_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

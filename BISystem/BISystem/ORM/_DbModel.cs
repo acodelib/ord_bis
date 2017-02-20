@@ -8,10 +8,11 @@ namespace BISystem.ORM
 {
     public class _DbModel : DbContext    {
 
-        public _DbModel() : base("SystemDB") {
+        public _DbModel() : base("name=SystemDB") {
 
         }
 
+        public DbSet<User> User { get; set; }
         public DbSet<Connection> Connections { get; set; }
         public DbSet<Db_Type> Db_Types { get; set; }
     }

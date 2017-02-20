@@ -1,0 +1,102 @@
+﻿@model BISystem.ORM.Connection
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Connection</legend>
+
+        @Html.HiddenFor(model => model.connection_id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.db_type_id, "Db_Type")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("db_type_id", String.Empty)
+            @Html.ValidationMessageFor(model => model.db_type_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.database_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.database_name)
+            @Html.ValidationMessageFor(model => model.database_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.default_schema)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.default_schema)
+            @Html.ValidationMessageFor(model => model.default_schema)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.host)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.host)
+            @Html.ValidationMessageFor(model => model.host)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.db_user)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.db_user)
+            @Html.ValidationMessageFor(model => model.db_user)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.time_out)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.time_out)
+            @Html.ValidationMessageFor(model => model.time_out)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.connection_string)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.connection_string)
+            @Html.ValidationMessageFor(model => model.connection_string)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

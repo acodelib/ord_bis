@@ -1,0 +1,82 @@
+﻿@model IEnumerable<BISystem.ORM.Connection>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Db_Type.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.database_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.default_schema)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.host)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.db_user)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.time_out)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.connection_string)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Db_Type.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.database_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.default_schema)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.host)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.db_user)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.time_out)
+        </td>        
+        <td>
+            <textarea cols="5" id="item_connection_string" name="item.connection_string" rows="2"  style="font-size:small;resize:none">
+                @Html.Encode(@item.connection_string)
+            </textarea>      
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.connection_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.connection_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.connection_id })
+        </td>
+    </tr>
+}
+
+</table>
