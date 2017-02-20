@@ -1,4 +1,7 @@
-﻿/*
+﻿USE BISystem
+GO
+
+/*
 Created: 2/19/2017
 Modified: 2/19/2017
 Model: Microsoft SQL Server 2012
