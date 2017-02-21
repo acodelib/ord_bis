@@ -11,7 +11,7 @@ namespace BISystem.ORM
     public class Db_Type  {
 
         [Key]
-        public int    db_type_id { get; set; }
+        public int db_type_id { get; set; }
 
         [Display(Name="Db Type")]
         public String name { get; set; }

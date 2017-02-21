@@ -1,0 +1,54 @@
+﻿@model BISystem.ORM.AccessRequest
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>AccessRequest</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.for_user_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.for_user_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.for_surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.for_surname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.for_email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.for_email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.requsestor_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.requsestor_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.message)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.message)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

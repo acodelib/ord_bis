@@ -15,5 +15,6 @@ namespace BISystem.ORM
         public DbSet<User> User { get; set; }
         public DbSet<Connection> Connections { get; set; }
         public DbSet<Db_Type> Db_Types { get; set; }
+        public DbSet<AccessRequest> AccessRequests { get; set; }
     }
 }

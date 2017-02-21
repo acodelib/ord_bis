@@ -20,6 +20,12 @@ namespace BISystem
           );
 
             routes.MapRoute(
+            name: "AccessRequest",
+            url:  "AccessRequest/{action}/{id}",
+            defaults: new { controller = "AccessRequest", action = "Index", id = UrlParameter.Optional }
+        );
+
+            routes.MapRoute(
              name: "Connection",
              url: "Connection/{action}/{id}",
              defaults: new { controller = "Connection", action = "Index", id = UrlParameter.Optional }

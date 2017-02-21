@@ -1,0 +1,50 @@
+﻿@model BISystem.ORM.AccessRequest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AccessRequest</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.for_user_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.for_user_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.for_surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.for_surname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.for_email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.for_email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.requsestor_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.requsestor_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.message)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.message)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.request_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

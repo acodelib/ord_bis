@@ -1,0 +1,71 @@
+﻿@model BISystem.ORM.AccessRequest
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create a request for a new user</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>AccessRequest</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.for_user_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.for_user_name)
+            @Html.ValidationMessageFor(model => model.for_user_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.for_surname)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.for_surname)
+            @Html.ValidationMessageFor(model => model.for_surname)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.for_email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.for_email)
+            @Html.ValidationMessageFor(model => model.for_email)
+        </div>
+
+        @if (Request.IsAuthenticated)
+        {
+            //int id = (int)Membership.GetUser().ProviderUserKey;            
+            <div> @*class="editor-field">*@
+                <input class="text-box single-line" data-val="true" data-val-number="The field requsestor_id must be a number." 
+                       @*data-val-required="The requsestor_id field is required."*@
+                       id="requsestor_id" name="requsestor_id" type="hidden" value="@((int)Membership.GetUser().ProviderUserKey)" />
+                <span class="field-validation-valid" data-valmsg-for="requsestor_id" data-valmsg-replace="true"></span>
+            </div>
+         }
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.message)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.message)
+            @Html.ValidationMessageFor(model => model.message)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

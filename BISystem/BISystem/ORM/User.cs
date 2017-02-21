@@ -14,9 +14,10 @@ namespace BISystem.ORM
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
-        [Column("name")]
+        
         public string UserName { get; set; }
         public string surname { get; set; }
+        public string first_name { get; set; }
         public string email { get; set; }
         public string manager_id { get; set; }
     }

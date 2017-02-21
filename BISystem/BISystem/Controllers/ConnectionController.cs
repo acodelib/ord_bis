@@ -8,7 +8,8 @@ using System.Web.Mvc;
 using BISystem.ORM;
 
 namespace BISystem.Controllers
-{
+{   
+    [Authorize]
     public class ConnectionController : Controller
     {
         private _DbModel db = new _DbModel();

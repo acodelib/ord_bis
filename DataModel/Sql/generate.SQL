@@ -1,13 +1,21 @@
-﻿USE BISystem
-GO
-
-/*
-Created: 2/19/2017
-Modified: 2/19/2017
+﻿/*
+Created: 19.02.2017
+Modified: 21.02.2017
 Model: Microsoft SQL Server 2012
 Database: MS SQL Server 2012
 */
 
+
+-- Drop tables section ---------------------------------------------------
+
+DROP TABLE [AccessRequests]
+go
+DROP TABLE [Users]
+go
+DROP TABLE [Db_Types]
+go
+DROP TABLE [Connections]
+go
 
 -- Create tables section -------------------------------------------------
 
@@ -28,16 +36,6 @@ CREATE TABLE [Connections]
 )
 go
 
--- Create indexes for table Connections
-
-CREATE INDEX [IX_Relationship1] ON [Connections] ([db_type_id])
-go
-
--- Add keys for table Connections
-
-ALTER TABLE [Connections] ADD CONSTRAINT [Key1] PRIMARY KEY ([connection_id])
-go
-
 -- Table Db_Types
 
 CREATE TABLE [Db_Types]
@@ -48,9 +46,30 @@ CREATE TABLE [Db_Types]
 )
 go
 
--- Add keys for table Db_Types
+-- Table Users
 
-ALTER TABLE [Db_Types] ADD CONSTRAINT [Key2] PRIMARY KEY ([db_type_id])
+CREATE TABLE [Users]
+(
+ [UserId] Int IDENTITY NOT NULL,
+ [UserName] Varchar(100) NOT NULL,
+ [first_name] Varchar(100) NULL,
+ [surname] Varchar(100) NULL,
+ [email] Varchar(300) NULL,
+ [manager_id] Int NULL
+)
+go
+
+-- Table AccessRequests
+
+CREATE TABLE [AccessRequests]
+(
+ [request_id] Int IDENTITY NOT NULL,
+ [for_user_name] Varchar(100) NULL,
+ [for_surname] Varchar(100) NULL,
+ [for_email] Varchar(300) NULL,
+ [requsestor_id] Int NULL,
+ [message] Varchar(max) NULL
+)
 go
 
 
