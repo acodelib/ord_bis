@@ -1,12 +1,14 @@
 ﻿/*
 Created: 19.02.2017
-Modified: 21.02.2017
+Modified: 22.02.2017
 Model: Microsoft SQL Server 2012
 Database: MS SQL Server 2012
 */
 
 
 -- Drop tables section ---------------------------------------------------
+use BISystem
+GO
 
 DROP TABLE [AccessRequests]
 go
@@ -50,9 +52,8 @@ go
 
 CREATE TABLE [Users]
 (
- [UserId] Int IDENTITY NOT NULL,
- [UserName] Varchar(100) NOT NULL,
- [first_name] Varchar(100) NULL,
+ [user_id] Int IDENTITY NOT NULL,
+ [name] Varchar(100) NULL,
  [surname] Varchar(100) NULL,
  [email] Varchar(300) NULL,
  [manager_id] Int NULL
@@ -67,9 +68,11 @@ CREATE TABLE [AccessRequests]
  [for_user_name] Varchar(100) NULL,
  [for_surname] Varchar(100) NULL,
  [for_email] Varchar(300) NULL,
- [requsestor_id] Int NULL,
- [message] Varchar(max) NULL
+ [requestor_id] Int NULL,
+ [message] Varchar(max) NULL,
+ [resolved] Bit NULL
 )
 go
+
 
 

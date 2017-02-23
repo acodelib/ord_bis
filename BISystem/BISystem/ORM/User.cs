@@ -7,7 +7,7 @@ using System.Web;
 
 namespace BISystem.ORM
 {
-    [Table("UserProfile")]
+    [Table("Users")]
     public class User
     {
         [Key]
@@ -20,5 +20,7 @@ namespace BISystem.ORM
         public string first_name { get; set; }
         public string email { get; set; }
         public string manager_id { get; set; }
+
+        public virtual IEnumerable<Users_Roles> roles { get; set; }
     }
 }

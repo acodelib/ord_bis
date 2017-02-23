@@ -19,10 +19,12 @@ namespace BISystem.ORM
         [Display(Name = "Email")]
         public string for_email { get; set; }
 
-        public int? requsestor_id { get; set; }
+        public int? requestor_id { get; set; }
 
         [Display(Name ="Request Message")]
         public string message { get; set; }
         
+        [Display(Name = "Resolved")]
+        public Boolean resolved { get; set; }
     }
 }

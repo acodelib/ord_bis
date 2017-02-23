@@ -188,6 +188,7 @@
     <Compile Include="Controllers\ConnectionController.cs" />
     <Compile Include="Controllers\DbTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,7 +196,9 @@
     <Compile Include="ORM\AccessRequest.cs" />
     <Compile Include="ORM\Connection.cs" />
     <Compile Include="ORM\Db_Type.cs" />
+    <Compile Include="ORM\Roles.cs" />
     <Compile Include="ORM\User.cs" />
+    <Compile Include="ORM\Users_Roles.cs" />
     <Compile Include="ORM\_DbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -326,6 +329,11 @@
     <Content Include="Views\AccessRequest\Create.cshtml" />
     <Content Include="Views\AccessRequest\Edit.cshtml" />
     <Content Include="Views\AccessRequest\Delete.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

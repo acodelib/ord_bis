@@ -19,6 +19,13 @@ namespace BISystem
               defaults: new { controller = "DbType", action = "Index", id = UrlParameter.Optional }
           );
 
+
+            routes.MapRoute(
+              name: "User",
+              url: "User/{action}/{id}",
+              defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
+          );
+
             routes.MapRoute(
             name: "AccessRequest",
             url:  "AccessRequest/{action}/{id}",

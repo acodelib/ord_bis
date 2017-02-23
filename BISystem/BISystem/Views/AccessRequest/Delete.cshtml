@@ -44,6 +44,13 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.message)
     </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.resolved)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.resolved)
+    </div>
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()

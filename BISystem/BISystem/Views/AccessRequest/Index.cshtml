@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Pending System Access Requests</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -21,10 +21,13 @@
             @Html.DisplayNameFor(model => model.for_email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.requsestor_id)
+            @Html.DisplayNameFor(model => model.requestor_id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resolved)
         </th>
         <th></th>
     </tr>
@@ -41,10 +44,13 @@
             @Html.DisplayFor(modelItem => item.for_email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.requsestor_id)
+            @Html.DisplayFor(modelItem => item.requestor_id)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.resolved)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.request_id }) |

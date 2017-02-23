@@ -55,6 +55,14 @@
             @Html.ValidationMessageFor(model => model.message)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.resolved)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.resolved)
+            @Html.ValidationMessageFor(model => model.resolved)
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>

@@ -9,35 +9,33 @@ using BISystem.ORM;
 
 namespace BISystem.Controllers
 {
-    public class AccessRequestController : Controller
+    public class UserController : Controller
     {
         private _DbModel db = new _DbModel();
 
         //
-        // GET: /AccessRequest/
+        // GET: /User/
 
         public ActionResult Index()
         {
-            var par = db.AccessRequests.Where(ar => ar.resolved == false).ToList();
-
-            return View(par);
+            return View(db.User.ToList());
         }
 
         //
-        // GET: /AccessRequest/Details/5
+        // GET: /User/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            AccessRequest accessrequest = db.AccessRequests.Find(id);
-            if (accessrequest == null)
+            User user = db.User.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(accessrequest);
+            return View(user);
         }
 
         //
-        // GET: /AccessRequest/Create
+        // GET: /User/Create
 
         public ActionResult Create()
         {
@@ -45,73 +43,73 @@ namespace BISystem.Controllers
         }
 
         //
-        // POST: /AccessRequest/Create
+        // POST: /User/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(AccessRequest accessrequest)
+        public ActionResult Create(User user)
         {
             if (ModelState.IsValid)
             {
-                db.AccessRequests.Add(accessrequest);
+                db.User.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(accessrequest);
+            return View(user);
         }
 
         //
-        // GET: /AccessRequest/Edit/5
+        // GET: /User/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            AccessRequest accessrequest = db.AccessRequests.Find(id);
-            if (accessrequest == null)
+            User user = db.User.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(accessrequest);
+            return View(user);
         }
 
         //
-        // POST: /AccessRequest/Edit/5
+        // POST: /User/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(AccessRequest accessrequest)
+        public ActionResult Edit(User user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(accessrequest).State = EntityState.Modified;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(accessrequest);
+            return View(user);
         }
 
         //
-        // GET: /AccessRequest/Delete/5
+        // GET: /User/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            AccessRequest accessrequest = db.AccessRequests.Find(id);
-            if (accessrequest == null)
+            User user = db.User.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(accessrequest);
+            return View(user);
         }
 
         //
-        // POST: /AccessRequest/Delete/5
+        // POST: /User/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AccessRequest accessrequest = db.AccessRequests.Find(id);
-            db.AccessRequests.Remove(accessrequest);
+            User user = db.User.Find(id);
+            db.User.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
