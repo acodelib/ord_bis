@@ -18,7 +18,7 @@ namespace BISystem.Controllers
 
         public ActionResult Index()
         {
-            return View(db.User.ToList());
+            return View(db.Users.ToList());
         }
 
         //
@@ -26,7 +26,7 @@ namespace BISystem.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            User user = db.User.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace BISystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.User.Add(user);
+                db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +64,7 @@ namespace BISystem.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            User user = db.User.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -93,7 +93,7 @@ namespace BISystem.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            User user = db.User.Find(id);
+            User user = db.Users.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace BISystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.User.Find(id);
-            db.User.Remove(user);
+            User user = db.Users.Find(id);
+            db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

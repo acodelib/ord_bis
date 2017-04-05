@@ -21,6 +21,6 @@ namespace BISystem.ORM
         public string email { get; set; }
         public string manager_id { get; set; }
 
-        public virtual IEnumerable<Users_Roles> roles { get; set; }
+        public virtual IEnumerable<User_in_Role> Roles { get; set; }
     }
 }

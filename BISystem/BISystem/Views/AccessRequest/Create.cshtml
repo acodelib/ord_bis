@@ -52,7 +52,7 @@
         @if(Request.IsAuthenticated)
         {
             <div>
-                <input data-val="true" id="requestor_id" name="requsestor_id" type="hidden" value="@((int)Membership.GetUser().ProviderUserKey)" />
+                <input data-val="true" id="requestor_id" name="requestor_id" type="hidden" value="@((int)Membership.GetUser().ProviderUserKey)" />
                 <span class="field-validation-valid" data-valmsg-for="requestor_id" data-valmsg-replace="true"></span>
             </div>
         }

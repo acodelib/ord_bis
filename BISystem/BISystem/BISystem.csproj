@@ -196,9 +196,9 @@
     <Compile Include="ORM\AccessRequest.cs" />
     <Compile Include="ORM\Connection.cs" />
     <Compile Include="ORM\Db_Type.cs" />
-    <Compile Include="ORM\Roles.cs" />
+    <Compile Include="ORM\Role.cs" />
     <Compile Include="ORM\User.cs" />
-    <Compile Include="ORM\Users_Roles.cs" />
+    <Compile Include="ORM\User_in_Role.cs" />
     <Compile Include="ORM\_DbModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
